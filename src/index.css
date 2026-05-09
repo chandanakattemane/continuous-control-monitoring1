@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Day 14 — UI Brand Polish #1B4F8A Arial font 44px touch targets */
+
+
+/* ✅ Brand Font */
+
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* ✅ Brand Colors */
+
+:root {
+    --brand-primary: #1B4F8A;
+    --brand-secondary: #163d6e;
+    --brand-success: #22c55e;
+    --brand-danger: #ef4444;
+    --brand-warning: #f97316;
+    --brand-purple: #a855f7;
+    --brand-bg: #f9fafb;
+}
+
+
+/* ✅ Base body */
+
+html, body {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* ✅ Scrollbar styling */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1B4F8A;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #163d6e;
+}
+
+
+/* ✅ Minimum touch target size — 44px */
+
+button {
+    min-height: 44px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+/* ✅ Input focus style */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    ring: 2px solid #1B4F8A;
+}
+
+
+/* ✅ Smooth page transitions */
+
+.page-enter {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+
+/* ✅ Card hover effect */
+
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 79, 138, 0.15);
+}
+
+
+/* ✅ Table row hover */
+
+tr:hover {
+    background-color: #eff6ff;
+}
+
+
+/* ✅ Animate pulse for skeleton */
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+/* ✅ Bounce animation for chat dots */
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 0.8s infinite;
+}
